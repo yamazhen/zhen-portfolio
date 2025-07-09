@@ -36,14 +36,27 @@ body {
 }
 
 .timeline {
-  background-color: red;
-  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline:before {
   content: "";
   position: absolute;
-  color: blue;
-  border-left: 2px solid blue;
+  border-left: 2px solid var(--color-foreground);
   height: 100%;
+  left: 50px;
+  opacity: 0.1;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0.25rem;
+}
+
+.timeline-item img {
+  justify-self: center;
+  z-index: 1;
 }

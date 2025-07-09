@@ -21,7 +21,7 @@ export default function Home() {
             text="23yo software engineer from Malaysia 🇲🇾"
             className="mt-2"
             loop={false}
-            speed={25}
+            speed={20}
           />
           <TypewriterText
             text="Fullstack by trade, I solve problems with code and deploy solutions with spite."
@@ -75,7 +75,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="mt-10">
+      <section className="my-10">
         <WorkEducation />
       </section>
     </>
