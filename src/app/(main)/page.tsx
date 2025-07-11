@@ -71,7 +71,7 @@ export default function Home() {
         </div>
         <div id="greetingImage" className="ml-4">
           <Image
-            src="/img/me.jpg"
+            src="/img/me.JPG"
             alt="Picture Of Me"
             width={350}
             height={350}
