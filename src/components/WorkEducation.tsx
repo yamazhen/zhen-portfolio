@@ -1,6 +1,5 @@
 "use client";
 
-import { DivideCircle } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -13,7 +12,7 @@ export default function WorkEducation() {
     <>
       <div
         id="workEducationTabButtons"
-        className="flex w-full gap-2 justify-center bg-foreground/10 rounded-xs p-1"
+        className="flex w-full gap-2 justify-center bg-zhen-highlight rounded-xs p-1"
       >
         <button
           className={`w-full cursor-pointer ${workEducationMode === "work" ? "bg-background" : ""}`}
@@ -30,7 +29,7 @@ export default function WorkEducation() {
       </div>
       <div
         id="workEducationContent"
-        className="mt-2 border-3 border-foreground/10 px-2"
+        className="mt-2 border-3 border-zhen-highlight px-2"
       >
         {workEducationMode === "work" ? (
           <div className="timeline">
@@ -40,7 +39,7 @@ export default function WorkEducation() {
                 alt="Test"
                 width={50}
                 height={50}
-                className="rounded-full h-[50px] w-[50px] object-cover border-2 border-foreground/20"
+                className="rounded-full h-[50px] w-[50px] object-cover border-2 border-zhen-highlight"
               />
               <div className="flex flex-col text-xs">
                 <small className="text-foreground/75">
@@ -68,7 +67,7 @@ export default function WorkEducation() {
                 alt="Test"
                 width={50}
                 height={50}
-                className="rounded-full h-[50px] w-[50px] object-cover border-2 border-foreground/20"
+                className="rounded-full h-[50px] w-[50px] object-cover border-2 border-zhen-highlight"
               />
               <div className="flex flex-col text-xs">
                 <small className="text-foreground/75">March 2020</small>
@@ -92,13 +91,13 @@ export default function WorkEducation() {
           </div>
         ) : (
           <div className="timeline">
-            <div className="timeline-item">
+            <div className="timeline-item my-8">
               <Image
                 src="/img/dsulogo.jpeg"
                 alt="Test"
                 width={50}
                 height={50}
-                className="rounded-full h-[50px] w-[50px] object-cover border-2 border-foreground/20"
+                className="rounded-full h-[50px] w-[50px] object-cover border-2 border-zhen-highlight"
               />
               <div className="flex flex-col text-xs">
                 <small className="text-foreground/75">

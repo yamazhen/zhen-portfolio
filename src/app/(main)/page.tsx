@@ -2,6 +2,7 @@
 
 import TypewriterText from "@/components/TypewriterText";
 import WorkEducation from "@/components/WorkEducation";
+import downloadResume from "@/hooks/downloadResume";
 import { FileUser, Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 
@@ -30,7 +31,10 @@ export default function Home() {
             speed={10}
           />
           <div id="greetingSocials" className="mt-4 flex gap-4 items-center">
-            <button className="flex px-4 py-2 rounded-xs cursor-pointer border-1 border-foreground/20 hover:bg-foreground/20 hover:border-foreground/0 text-xs font-bold justify-center items-center gap-2">
+            <button
+              className="flex px-4 py-2 rounded-xs cursor-pointer border-1 border-zhen-highlight hover:bg-zhen-highlight text-xs font-bold justify-center items-center gap-2"
+              onClick={downloadResume}
+            >
               Resume
               <FileUser strokeWidth={1.5} size={16} />
             </button>
