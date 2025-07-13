@@ -71,7 +71,17 @@ export default function WorkEducation() {
               />
               <div className="flex flex-col text-xs">
                 <small className="text-foreground/75">March 2020</small>
-                <h3 className="text-sm">Alvin Camba</h3>
+                <h3 className="text-sm">
+                  Alvin Camba{" "}
+                  <a
+                    href="https://alvincamba.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/50 hover:text-foreground"
+                  >
+                    <small>alvincamba.com</small>
+                  </a>
+                </h3>
                 <small className="text-foreground/75 mb-1">
                   Freelance Web Developer (Remote)
                 </small>

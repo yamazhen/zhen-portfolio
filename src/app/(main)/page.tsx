@@ -10,27 +10,36 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section id="greeting" className="mt-10 flex justify-center items-center">
-        <div id="greetingText" className="flex flex-col w-[800px] h-full">
+      <section
+        id="greeting"
+        className="md:mt-10 mt-8 flex flex-col md:flex-row justify-center items-center"
+      >
+        <div
+          id="greetingText"
+          className="flex flex-col md:w-[800px] h-full max-sm:order-2 max-sm:mt-10 max-sm:text-center"
+        >
           <TypewriterText
             text="Hi zhen here.👋"
             loop={false}
-            className="text-4xl"
+            className="text-xl md:text-4xl"
             speed={50}
           />
           <TypewriterText
             text="23yo software engineer from Malaysia 🇲🇾"
-            className="mt-2"
+            className="mt-2 max-sm:text-sm"
             loop={false}
             speed={20}
           />
           <TypewriterText
             text="Fullstack by trade, I solve problems with code and deploy solutions with spite."
-            className="mt-4"
+            className="mt-4 max-sm:text-sm"
             loop={false}
             speed={10}
           />
-          <div id="greetingSocials" className="mt-4 flex gap-4 items-center">
+          <div
+            id="greetingSocials"
+            className="mt-4 flex gap-4 items-center max-sm:justify-center"
+          >
             <button
               className="flex px-4 py-2 rounded-xs cursor-pointer border-1 border-zhen-highlight hover:bg-zhen-highlight text-xs font-bold justify-center items-center gap-2"
               onClick={downloadResume}
@@ -69,7 +78,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div id="greetingImage" className="ml-4">
+        <div id="greetingImage" className="md:ml-4 w-64">
           <Image
             src="/img/me.JPG"
             alt="Picture Of Me"
@@ -79,7 +88,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="my-10">
+      <section className="my-10 max-sm:px-4">
         <WorkEducation />
       </section>
     </>

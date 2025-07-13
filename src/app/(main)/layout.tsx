@@ -38,9 +38,9 @@ export default function RootLayout({
             <Nav />
             <span className="block h-16" />
             <div className="w-full flex justify-center">
-              <div className="w-[600px]">
+              <div className="w-full md:w-[600px]">
                 {children}
-                <footer className="flex items-center justify-between my-10 text-xs">
+                <footer className="flex items-center justify-between my-10 text-xs max-sm:px-4">
                   <div id="footerLeft" className="flex items-center gap-2">
                     <Copyright strokeWidth={1} size={12} />
                     2025 zhen.software | privacy
