@@ -124,7 +124,7 @@ export default function WorkEducation() {
                     year
                   </li>
                   <li>
-                    Published two research papeprs on AI use in Web Development
+                    Published two research papers on AI use in Web Development
                   </li>
                 </ul>
               </div>
