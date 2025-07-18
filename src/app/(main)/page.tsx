@@ -19,7 +19,7 @@ export default function Home() {
           className="flex flex-col md:w-[800px] h-full max-sm:order-2 max-sm:mt-10 max-sm:text-center"
         >
           <TypewriterText
-            text="Hi zhen here.👋"
+            text="hi zhen here.👋"
             loop={false}
             className="text-xl md:text-4xl"
             speed={50}
@@ -88,7 +88,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="my-10 max-sm:px-4">
+      <section className="my-10">
         <WorkEducation />
       </section>
     </>

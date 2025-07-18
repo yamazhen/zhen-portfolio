@@ -7,7 +7,7 @@ import Link from "next/link";
 function Nav() {
   const { setCurrentPage, theme, setTheme } = useAppContext();
   return (
-    <nav className="h-16 flex items-center justify-center fixed w-full bg-background/50 backdrop-blur z-50 max-sm:px-4">
+    <nav className="h-16 flex items-center justify-center fixed w-full bg-background/50 backdrop-blur z-50 max-md:px-4">
       <div className="flex justify-between md:w-[600px] w-full">
         <Link
           className="font-jetbrains text-2xl italic"

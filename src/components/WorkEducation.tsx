@@ -41,7 +41,7 @@ export default function WorkEducation() {
                 height={50}
                 className="rounded-full h-[50px] w-[50px] object-cover border-2 border-zhen-highlight"
               />
-              <div className="flex flex-col text-xs">
+              <div className="flex flex-col text-xs max-md:mr-6">
                 <small className="text-foreground/75">
                   August 2024 - Present
                 </small>
@@ -69,7 +69,7 @@ export default function WorkEducation() {
                 height={50}
                 className="rounded-full h-[50px] w-[50px] object-cover border-2 border-zhen-highlight"
               />
-              <div className="flex flex-col text-xs">
+              <div className="flex flex-col text-xs max-md:mr-6">
                 <small className="text-foreground/75">March 2020</small>
                 <h3 className="text-sm">
                   Alvin Camba{" "}
@@ -109,7 +109,7 @@ export default function WorkEducation() {
                 height={50}
                 className="rounded-full h-[50px] w-[50px] object-cover border-2 border-zhen-highlight"
               />
-              <div className="flex flex-col text-xs">
+              <div className="flex flex-col text-xs max-md:mr-6">
                 <small className="text-foreground/75">
                   February 2023 - June 2025
                 </small>
