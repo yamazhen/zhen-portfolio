@@ -42,7 +42,10 @@ export default function RootLayout({
             </div>
             <footer className="w-full flex justify-center items-center mt-10">
               <div className="w-full flex items-center justify-between md:w-[600px] max-md:px-4">
-                <div id="footerLeft" className="flex items-center gap-2">
+                <div
+                  id="footerLeft"
+                  className="flex items-center gap-2 text-xs"
+                >
                   <Copyright strokeWidth={1} size={12} />
                   2025 zhen.software | privacy
                 </div>
