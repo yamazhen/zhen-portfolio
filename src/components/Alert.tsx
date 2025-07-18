@@ -15,12 +15,14 @@ function Alert({ success = false, message, submessage }: Props) {
       <div
         className={` w-full ${success ? "bg-green-500" : "bg-red-500"} rounded-sm px-4 py-2 flex gap-2 items-center mb-4 text-xs justify-between`}
       >
-        {success ? (
-          <Check strokeWidth={1.5} size={18} />
-        ) : (
-          <LucideX strokeWidth={1.5} size={18} />
-        )}
-        {message}
+        <div className="flex items-center gap-2">
+          {success ? (
+            <Check strokeWidth={1.5} size={18} />
+          ) : (
+            <LucideX strokeWidth={1.5} size={18} />
+          )}
+          {message}
+        </div>
         {submessage && <small>{submessage}</small>}
         <div
           className={` p-1 ${success ? "bg-green-500 hover:bg-green-600" : "bg-red-500 hover:bg-red-600"} rounded-full flex items-center justify-center`}
