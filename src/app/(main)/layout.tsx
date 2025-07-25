@@ -4,7 +4,6 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import { AppProvider } from "@/context/AppContext";
 import React from "react";
-import { Copyright, Github, Linkedin, Mail } from "lucide-react";
 import Footer from "@/components/Footer";
 
 const jetBrains = JetBrains_Mono({
