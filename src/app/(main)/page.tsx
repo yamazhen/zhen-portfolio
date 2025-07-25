@@ -1,10 +1,12 @@
 "use client";
 
+import ProjectBox from "@/components/ProjectBox";
 import TypewriterText from "@/components/TypewriterText";
 import WorkEducation from "@/components/WorkEducation";
 import downloadResume from "@/hooks/downloadResume";
-import { FileUser, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, FileUser, Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // home page of the portfolio yo
 export default function Home() {
@@ -19,16 +21,16 @@ export default function Home() {
           className="flex flex-col md:w-[800px] h-full max-sm:order-2 max-sm:mt-10 max-sm:text-center"
         >
           <TypewriterText
-            text="hi zhen here.👋"
+            text="hi bowen here.👋"
             loop={false}
             className="text-xl md:text-4xl"
-            speed={50}
+            speed={10}
           />
           <TypewriterText
             text="23yo software engineer from Malaysia 🇲🇾"
             className="mt-2 max-sm:text-sm"
             loop={false}
-            speed={20}
+            speed={10}
           />
           <TypewriterText
             text="Fullstack by trade, I solve problems with code and deploy solutions with spite."
@@ -90,6 +92,19 @@ export default function Home() {
       </section>
       <section className="my-10">
         <WorkEducation />
+      </section>
+      <section className="my-16">
+        <div className="flex justify-between items-center">
+          <h1>featured projects</h1>
+          <Link
+            href={"/projects"}
+            className="flex items-center gap-2 text-sm text-foreground/75 hover:text-foreground"
+          >
+            view more
+            <ArrowRight strokeWidth={1.5} size={16} />
+          </Link>
+        </div>
+        <ProjectBox />
       </section>
     </>
   );

@@ -48,8 +48,9 @@ body {
 .timeline:before {
   content: "";
   position: absolute;
-  border-left: 2px solid var(--color-zhen-highlight);
-  height: 100%;
+  border-left: 1px solid var(--color-zhen-highlight);
+  top: 0;
+  bottom: 0;
   left: 50px;
 }
 
