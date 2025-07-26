@@ -1,3 +1,5 @@
+"use client";
+
 import { Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,6 +68,7 @@ function ProjectBox() {
             href={"/projects"}
             className="border border-zhen-highlight rounded-xs p-4 flex flex-col"
             key={`p${project.id}`}
+            onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={project.image}

@@ -1,3 +1,5 @@
+import ProjectBox from "@/components/ProjectBox";
+
 export default function Projects() {
-  return <div>Projects (WIP)</div>;
+  return <ProjectBox />;
 }
