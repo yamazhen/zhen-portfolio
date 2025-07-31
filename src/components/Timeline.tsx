@@ -28,7 +28,7 @@ function Timeline({ timelineItems }: Props) {
             />
             <div className="flex flex-col text-xs max-md:mr-6">
               <small className="text-foreground/75">{item.period}</small>
-              <h3 className="text-sm">Containerverse Sdn. Bhd.</h3>
+              <h3 className="text-sm">{item.company}</h3>
               <small className="text-foreground/75 mb-1">{item.position}</small>
               <ul className="text-foreground/90 list-disc pl-4">
                 {item.description.map((desc, index) => {

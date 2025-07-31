@@ -26,7 +26,6 @@ export default function WorkEducation() {
       position: "Freelance Web Developer (Remote)",
       period: "March 2020",
       logo: "/img/alvincambalogo.png",
-      website: "https://alvincamba.com",
       description: [
         "Designed and developed a professional biography website for a U.S. university professor, including a custom CMS for easy content updates",
         "Built responsive and accessible UI using HTML, CSS, JavaScript, and PHP with performance optimization",

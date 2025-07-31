@@ -64,21 +64,21 @@ function ProjectBox() {
     <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4 mt-10">
       {projects.map((project) => {
         return (
-          <Link
-            href={"/projects"}
+          <div
             className="border border-zhen-highlight rounded-xs p-4 flex flex-col"
             key={`p${project.id}`}
-            onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={project.image}
-              alt={`${project.name} showcase`}
-              width={1000}
-              height={100}
-              className="rounded-sm mb-4 self-center"
-            />
-            <h1 className="text-sm mb-1">{project.name}</h1>
-            <p className="text-xs text-foreground/75">{project.description}</p>
+            <Link href={"/projects"}>
+              <Image
+                src={project.image}
+                alt={`${project.name} showcase`}
+                width={1000}
+                height={100}
+                className="rounded-sm mb-4 self-center cursor-pointer"
+              />
+              <h1 className="text-sm mb-1 cursor-pointer">{project.name}</h1>
+              <p className="text-xs text-foreground/75 cursor-pointer">{project.description}</p>
+            </Link>
             <div className="flex items-center flex-wrap mt-8 text-[10px] gap-1">
               {project.techStack.map((tech, idx) => {
                 return (
@@ -94,19 +94,18 @@ function ProjectBox() {
             <div className="flex items-center flex-wrap mt-4 text-[10px] gap-2 text-background">
               {project.source.map((src, idx) => {
                 return (
-                  <a
+                  <button
                     key={`p${project.id}-s${idx}`}
-                    href={src.url}
-                    className="bg-foreground rounded-xs px-2 py-1 flex items-center gap-1"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={() => window.open(src.url, '_blank')}
+                    className="bg-foreground rounded-xs px-2 py-1 flex items-center gap-1 cursor-pointer hover:opacity-80"
                   >
                     <Github strokeWidth={1.5} size={14} />
                     {src.name}
-                  </a>
+                  </button>
                 );
               })}
             </div>
-          </Link>
+          </div>
         );
       })}
     </div>
