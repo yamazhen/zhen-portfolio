@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
+@custom-variant light (&:where(.light, .light *));
+
+* {
+	cursor: none;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #0a0a0a;
+	--foreground: #ededed;
+	--border: #1a1a1a;
+	--accent: #c084fc;
+	--accent-dim: #8b5cf0;
+	--muted: #888888;
+	--grid: rgba(26, 26, 26, 0.3);
+	--glass: rgba(255, 255, 255, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.light {
+	--background: #ededed;
+	--foreground: #0a0a0a;
+	--border: #e5e5e5;
+	--accent: #c084fc;
+	--accent-dim: #8b5cf0;
+	--muted: #777777;
+	--grid: rgba(229, 229, 229, 0.3);
+	--glass: rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-accent: var(--accent);
+	--color-border: var(--border);
+	--color-muted: var(--muted);
+	--color-accent-dim: var(--accent-dim);
+
+	--font-jetbrains: var(--font-jetbrains);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-jetbrains), serif;
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--background);
+}
+
+.nav-link {
+	position: relative;
+}
+
+.nav-link::after {
+	content: "";
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--accent);
+	transition: width 0.5s ease, color 0.5s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+	width: 100%;
+}
+
+.nav-link.active,
+.nav-link:hover {
+	color: var(--accent);
+}
+
+.background-grid {
+	background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px), linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+	background-size: 50px 50px;
+	position: relative;
+}
+
+.background-grid::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: linear-gradient(to right, var(--accent) 1px, transparent 1px), linear-gradient(to bottom, var(--accent) 1px, transparent 1px);
+	background-size: 50px 50px;
+	mask: radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+	-webkit-mask: radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+	pointer-events: none;
+	z-index: -1;
+}
+
+.glass-hover {
+	position: relative;
+	overflow: hidden;
+}
+
+.glass-hover::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, transparent, var(--glass), transparent);
+	transform: translateX(-100%);
+	transition: transform 0.7s ease-out;
+}
+
+.glass-hover:hover::before {
+	transform: translateX(100%);
+}
+
+@keyframes blink {
+
+	0%,
+	50% {
+		opacity: 1;
+	}
+
+	51%,
+	100% {
+		opacity: 0;
+	}
+}
+
+.animate-blink {
+	animation: blink 1s infinite;
 }
