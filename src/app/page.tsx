@@ -13,7 +13,7 @@ export default function Home() {
 
 	return (
 		<>
-			<PageSection first className="justify-center">
+			<PageSection first className="items-center">
 				<div className="flex items-center gap-6 lg:gap-10 max-lg:flex-col py-8 max-lg:items-start justify-center">
 					<div className="flex flex-col gap-8 max-lg:gap-4 max-md:gap-2 max-lg:order-1">
 						<small className="max-lg:text-xs"><span className="text-accent">~/portfolio</span> $ cat intro.txt</small>
