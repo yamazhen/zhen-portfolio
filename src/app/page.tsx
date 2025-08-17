@@ -14,7 +14,7 @@ export default function Home() {
 	return (
 		<>
 			<PageSection first>
-				<div className="flex items-center gap-6 lg:gap-16 max-lg:flex-col py-8 max-lg:items-start">
+				<div className="flex items-center gap-6 lg:gap-10 max-lg:flex-col py-8 max-lg:items-start">
 					<div className="flex flex-col gap-8 max-lg:gap-4 max-md:gap-2 max-lg:order-1">
 						<small className="max-lg:text-xs"><span className="text-accent">~/portfolio</span> $ cat intro.txt</small>
 						<Typewriter text="hi, bowen here. 👋" className="text-accent max-lg:text-4xl max-md:text-base text-5xl font-bold whitespace-nowrap" />
@@ -28,7 +28,7 @@ export default function Home() {
 							<a href="mailto:bowxyt@gmail.com"><LucideMail strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" /></a>
 						</div>
 					</div>
-					<div className="flex items-center w-full h-full justify-start">
+					<div className="flex items-center w-full h-full justify-start max-md:w-48 md:w-96">
 						<Image src="/img/me.JPG" alt="picture of me" width={1000} height={1000} className="rounded-xl md:h-64 md:w-64 lg:w-full lg:h-full" />
 					</div>
 				</div>
