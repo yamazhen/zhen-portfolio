@@ -28,7 +28,7 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="flex items-center">
-						<Image src="/img/me.JPG" alt="picture of me" width={500} height={500} className="rounded-xl" />
+						<Image src="/img/me.JPG" alt="picture of me" width={600} height={600} className="rounded-xl" />
 					</div>
 				</div>
 			</PageSection>
