@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Globe } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 import Link from "next/link";
 
 type ProjectSourceType = "github" | "website"
