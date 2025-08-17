@@ -54,8 +54,8 @@ export default function CareerBox() {
 	return (
 		<div className="bg-border/30 rounded-sm">
 			<div className="flex justify-between items-center text-sm m-0">
-				<button className={`flex-1 py-3 shine-hover ${careerMode === "exp" ? "border-inset border-b border-accent" : "shine-center"}`} onClick={() => setCareerMode("exp")}>Work</button>
-				<button className={`flex-1 py-3 shine-hover ${careerMode === "edu" ? "border-inset border-b border-accent" : "shine-center"}`} onClick={() => setCareerMode("edu")}>Education</button>
+				<button className={`flex-1 py-3 shine-hover border-accent ${careerMode === "exp" ? "border-inset border-b" : "shine-center"}`} onClick={() => setCareerMode("exp")}>Work</button>
+				<button className={`flex-1 py-3 shine-hover border-accent ${careerMode === "edu" ? "border-inset border-b" : "shine-center"}`} onClick={() => setCareerMode("edu")}>Education</button>
 			</div>
 			<div className="flex flex-col justify-center p-8">
 				{careerMode === "exp" ? (
