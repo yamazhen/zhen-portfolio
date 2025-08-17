@@ -28,7 +28,7 @@ export default function Home() {
 							<a href="mailto:bowxyt@gmail.com"><LucideMail strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" /></a>
 						</div>
 					</div>
-					<div className="flex items-center">
+					<div className="flex items-center lg:w-96">
 						<Image src="/img/me.JPG" alt="picture of me" width={600} height={600} className="rounded-xl" />
 					</div>
 				</div>
