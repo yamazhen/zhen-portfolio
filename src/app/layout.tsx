@@ -34,8 +34,8 @@ export default function RootLayout({
 						<Nav />
 						<GridBackground className="max-md:px-6 max-lg:px-30 lg:px-[150px]">
 							{children}
+							<Footer />
 						</GridBackground>
-						<Footer />
 					</main>
 				</AppProvider>
 			</body>
