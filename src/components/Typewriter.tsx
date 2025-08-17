@@ -30,9 +30,12 @@ function Typewriter({ text, speed = 50, className }: TypeWriteProp) {
 
 
 	return (
-		<h1 className={className}>
-			{displayText}
-			<span className="animate-blink">|</span>
+		<h1 className={`${className} relative`}>
+			<span className="invisible">{text}</span>
+			<span className="absolute top-0 left-0">
+				{displayText}
+				<span className="animate-blink">|</span>
+			</span>
 		</h1>
 	)
 }
