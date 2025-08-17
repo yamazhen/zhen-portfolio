@@ -44,6 +44,7 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 
 		const handleTouchMove = (e: TouchEvent) => {
 			if (!gridRef.current) return;
+			e.preventDefault()
 
 			const rect = gridRef.current.getBoundingClientRect()
 			const touch = e.touches[0]
@@ -53,25 +54,36 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 			}
 		}
 
-		const handleReset = () => {
-			targetX = -999;
-			targetY = -999;
+		const handleTouchStart = (e: TouchEvent) => {
+			if (!gridRef.current) return;
+
+			const rect = gridRef.current.getBoundingClientRect()
+			const touch = e.touches[0]
+			if (touch) {
+				targetX = touch.clientX - rect.left
+				targetY = touch.clientY - rect.top
+			}
+		}
+
+		const handleMouseLeave = () => {
+			targetX = currentX;
+			targetY = currentY;
 		};
 
 		const element = gridRef.current;
 		element?.addEventListener("mousemove", handleMouseMove);
-		element?.addEventListener("mouseleave", handleReset);;
-		element?.addEventListener("touchmove", handleTouchMove);
-		element?.addEventListener("touchend", handleReset);
+		element?.addEventListener("mouseleave", handleMouseLeave);
+		element?.addEventListener("touchmove", handleTouchMove, { passive: false });
+		element?.addEventListener("touchstart", handleTouchStart);
 
 		animate();
 
 		return () => {
 			cancelAnimationFrame(animationId);
 			element?.removeEventListener("mousemove", handleMouseMove);
-			element?.removeEventListener("mouseleave", handleReset);
+			element?.removeEventListener("mouseleave", handleMouseLeave);
 			element?.removeEventListener("touchmove", handleTouchMove);
-			element?.removeEventListener("touchend", handleReset);
+			element?.removeEventListener("touchstart", handleTouchStart);
 		};
 	}, []);
 
