@@ -6,41 +6,20 @@ export default function CustomCursor() {
 	const [position, setPosition] = useState({ x: 0, y: 0 });
 
 	useEffect(() => {
-		let currentX = 0;
-		let currentY = 0;
-		let targetX = 0;
-		let targetY = 0;
-		let animationId: number;
-
-		const lerp = (start: number, end: number, factor: number) => {
-			return start + (end - start) * factor;
-		};
-
-		const animate = () => {
-			currentX = lerp(currentX, targetX, 0.15);
-			currentY = lerp(currentY, targetY, 0.15);
-
-			setPosition({ x: currentX, y: currentY });
-			animationId = requestAnimationFrame(animate);
-		};
-
 		const handleMouseMove = (e: MouseEvent) => {
-			targetX = e.clientX;
-			targetY = e.clientY;
+			setPosition({ x: e.clientX, y: e.clientY });
 		};
 
 		window.addEventListener("mousemove", handleMouseMove);
-		animate();
 
 		return () => {
-			cancelAnimationFrame(animationId);
 			window.removeEventListener("mousemove", handleMouseMove);
 		};
 	}, []);
 
 	return (
 		<div
-			className="fixed w-6 h-6 bg-transparent border border-accent rounded-full pointer-events-none z-50"
+			className="fixed w-6 h-6 bg-transparent border border-accent rounded-full pointer-events-none z-50 hidden md:block"
 			style={{
 				left: position.x,
 				top: position.y,

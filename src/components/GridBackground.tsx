@@ -42,21 +42,36 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 			targetY = e.clientY - rect.top;
 		};
 
-		const handleMouseLeave = () => {
+		const handleTouchMove = (e: TouchEvent) => {
+			if (!gridRef.current) return;
+
+			const rect = gridRef.current.getBoundingClientRect()
+			const touch = e.touches[0]
+			if (touch) {
+				targetX = touch.clientX - rect.left;
+				targetY = touch.clientY - rect.top;
+			}
+		}
+
+		const handleReset = () => {
 			targetX = -999;
 			targetY = -999;
 		};
 
 		const element = gridRef.current;
 		element?.addEventListener("mousemove", handleMouseMove);
-		element?.addEventListener("mouseleave", handleMouseLeave);
+		element?.addEventListener("mouseleave", handleReset);;
+		element?.addEventListener("touchmove", handleTouchMove);
+		element?.addEventListener("touchend", handleReset);
 
 		animate();
 
 		return () => {
 			cancelAnimationFrame(animationId);
 			element?.removeEventListener("mousemove", handleMouseMove);
-			element?.removeEventListener("mouseleave", handleMouseLeave);
+			element?.removeEventListener("mouseleave", handleReset);
+			element?.removeEventListener("touchmove", handleTouchMove);
+			element?.removeEventListener("touchend", handleReset);
 		};
 	}, []);
 

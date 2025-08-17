@@ -12,9 +12,10 @@
 	--border: #1a1a1a;
 	--accent: #c084fc;
 	--accent-dim: #8b5cf0;
+	--accent-shine: rgba(192, 132, 252, .2);
 	--muted: #888888;
-	--grid: rgba(26, 26, 26, 0.3);
-	--glass: rgba(255, 255, 255, 0.2);
+	--grid: rgba(26, 26, 26, .3);
+	--glass: rgba(255, 255, 255, .2);
 }
 
 .light {
@@ -24,8 +25,8 @@
 	--accent: #c084fc;
 	--accent-dim: #8b5cf0;
 	--muted: #777777;
-	--grid: rgba(229, 229, 229, 0.3);
-	--glass: rgba(0, 0, 0, 0.2);
+	--grid: rgba(229, 229, 229, .3);
+	--glass: rgba(192, 132, 252, .1);
 }
 
 @theme {
@@ -62,7 +63,7 @@ body {
 	width: 0;
 	height: 2px;
 	background: var(--accent);
-	transition: width 0.5s ease, color 0.5s ease;
+	transition: width .5s ease, color .5s ease;
 }
 
 .nav-link:hover::after,
@@ -90,8 +91,8 @@ body {
 	bottom: 0;
 	background-image: linear-gradient(to right, var(--accent) 1px, transparent 1px), linear-gradient(to bottom, var(--accent) 1px, transparent 1px);
 	background-size: 50px 50px;
-	mask: radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
-	-webkit-mask: radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+	mask: radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .3) 70%, rgba(0, 0, 0, 0) 100%);
+	-webkit-mask: radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .3) 70%, rgba(0, 0, 0, 0) 100%);
 	pointer-events: none;
 	z-index: -1;
 }
@@ -107,7 +108,7 @@ body {
 	inset: 0;
 	background: linear-gradient(90deg, transparent, var(--glass), transparent);
 	transform: translateX(-100%);
-	transition: transform 0.7s ease-out;
+	transition: transform .7s ease-out;
 }
 
 .glass-hover:hover::before {
@@ -129,4 +130,82 @@ body {
 
 .animate-blink {
 	animation: blink 1s infinite;
+}
+
+.section-title {
+	position: relative;
+}
+
+.section-title::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 5%;
+	height: 2px;
+	background: var(--accent);
+}
+
+.border-hover-animate {
+	border: 1px solid var(--accent);
+	mask: conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0) var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+		conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0 var(--_i, 200%)/var(--_i, 8px) 200% border-box no-repeat,
+		linear-gradient(#000 0 0) padding-box no-repeat;
+	transition: .3s, mask-position .3s .3s;
+}
+
+.border-hover-animate:hover {
+	--_i: 100%;
+	transition: .3s, mask-size .3s .3s;
+}
+
+.shine-center {
+	position: relative;
+	overflow: hidden;
+}
+
+.shine-center::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at center, var(--accent-shine) 0%, transparent 30%);
+	transform: scale(0);
+	animation: shineExpand 0.8s ease-out forwards;
+}
+
+@keyframes shineExpand {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(2.5);
+		opacity: 0.8;
+	}
+}
+
+.shine-hover {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.shine-hover::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at center, var(--accent-shine) 0%, transparent 50%);
+	transform: scale(0);
+	opacity: 0;
+	transition: all 0.4s ease;
+}
+
+.shine-hover:hover::after {
+	transform: scale(2);
+	opacity: 0.6;
 }
