@@ -44,8 +44,7 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 
 		const handleTouchMove = (e: TouchEvent) => {
 			if (!gridRef.current) return;
-			e.preventDefault()
-
+	
 			const rect = gridRef.current.getBoundingClientRect()
 			const touch = e.touches[0]
 			if (touch) {
@@ -73,7 +72,7 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 		const element = gridRef.current;
 		element?.addEventListener("mousemove", handleMouseMove);
 		element?.addEventListener("mouseleave", handleMouseLeave);
-		element?.addEventListener("touchmove", handleTouchMove, { passive: false });
+		element?.addEventListener("touchmove", handleTouchMove);
 		element?.addEventListener("touchstart", handleTouchStart);
 
 		animate();
