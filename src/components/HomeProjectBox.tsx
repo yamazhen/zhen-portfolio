@@ -77,7 +77,7 @@ export default function HomeProjectBox() {
 	return <>
 		{projects.map(project => {
 			return (
-				<Link key={`p${project.id}`} href={"/projects"} className="bg-border/50 rounded-sm border-hover-animate transition-all duration-500 p-8 flex flex-col gap-6 hover:-translate-y-1" >
+				<Link key={`p${project.id}`} href={"/projects"} className="bg-border/30 rounded-sm border-hover-animate transition-all duration-500 p-8 flex flex-col gap-6 hover:-translate-y-1" >
 					<h1 className="font-bold text-lg max-md:text-base">{project.name}</h1>
 					<p className="text-muted text-sm max-md:text-xs">{project.description}</p>
 					<div className="flex items-center gap-2 text-xs flex-wrap max-md:text-[10px]">

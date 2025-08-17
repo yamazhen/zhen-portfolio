@@ -9,7 +9,7 @@
 :root {
 	--background: #0a0a0a;
 	--foreground: #ededed;
-	--border: #1a1a1a;
+	--border: #303030;
 	--accent: #c084fc;
 	--accent-dim: #8b5cf0;
 	--accent-shine: rgba(192, 132, 252, .2);
@@ -21,7 +21,7 @@
 .light {
 	--background: #ededed;
 	--foreground: #0a0a0a;
-	--border: #e5e5e5;
+	--border: #d0d0d0;
 	--accent: #c084fc;
 	--accent-dim: #8b5cf0;
 	--muted: #777777;
@@ -208,4 +208,27 @@ body {
 .shine-hover:hover::after {
 	transform: scale(2);
 	opacity: 0.6;
+}
+
+.footer-link {
+	position: relative;
+}
+
+.footer-link::after {
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: var(--accent);
+	transition: width .5s ease, color .5s ease;
+}
+
+.footer-link:hover::after {
+	width: 100%;
+}
+
+.footer-link:hover {
+	color: var(--accent);
 }

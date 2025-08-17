@@ -5,6 +5,7 @@ import { AppProvider } from "@/context/AppContext";
 import Nav from "@/components/Nav";
 import GridBackground from "@/components/GridBackground";
 import CustomCursor from "@/components/CustomCursor";
+import Footer from "@/components/Footer";
 
 const jetBrains = JetBrains_Mono({
 	variable: "--font-jetbrains",
@@ -34,6 +35,7 @@ export default function RootLayout({
 						<GridBackground className="max-md:px-6 max-lg:px-30 lg:px-[150px]">
 							{children}
 						</GridBackground>
+						<Footer />
 					</main>
 				</AppProvider>
 			</body>
