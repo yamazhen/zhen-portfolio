@@ -6,6 +6,7 @@ import PageSection from "@/components/PageSection";
 import Typewriter from "@/components/Typewriter";
 import { Github, Linkedin, LucideMail } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
 	const age = new Date().getFullYear() - 2002;
@@ -20,11 +21,11 @@ export default function Home() {
 						<p className="text-muted max-md:text-xs">{age}yo software engineer from Malaysia</p>
 						<p className="max-lg:text-sm">Fullstack by trade, I solve problems with code and deploy solutions with spite.</p>
 						<div className="flex items-center gap-4 text-sm max-md:text-xs">
-							<button className="text-background bg-accent hover:bg-accent-dim max-md:px-3 max-md:py-1.5 transition-all duration-500 rounded-sm px-6 py-3 hover:shadow-accent-dim/50 hover:shadow-[0_0_30px] cursor-pointer">Resume</button>
-							<button className="border border-border bg-background px-6 py-3 rounded-sm max-md:px-3 max-md:py-1.5 hover:border-accent glass-hover duration-500 transition-colors cursor-pointer">Projects</button>
-							<Github strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" />
-							<Linkedin strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" />
-							<LucideMail strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" />
+							<a href="/file/resume.pdf" download className="text-background bg-accent hover:bg-accent-dim max-md:px-3 max-md:py-1.5 transition-all duration-500 rounded-sm px-6 py-3 hover:shadow-accent-dim/50 hover:shadow-[0_0_30px] cursor-pointer">Resume</a>
+							<Link href={"/projects"} className="border border-border bg-background px-6 py-3 rounded-sm max-md:px-3 max-md:py-1.5 hover:border-accent glass-hover duration-500 transition-colors cursor-pointer">Projects</Link>
+							<a href="https://github.com/yamazhen" target="_blank" rel="noopener noreferrer"><Github strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" /></a>
+							<a href="https://linkedin.com/in/yamazhen" target="_blank" rel="noopener noreferrer"><Linkedin strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" /></a>
+							<a href="mailto:bowxyt@gmail.com"><LucideMail strokeWidth={1} className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4" /></a>
 						</div>
 					</div>
 					<div className="flex items-center">
