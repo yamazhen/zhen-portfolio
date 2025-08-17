@@ -64,6 +64,17 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 			}
 		}
 
+		const handleTouchEnd = (e: TouchEvent) => {
+			if (!gridRef.current) return;
+
+			const rect = gridRef.current.getBoundingClientRect()
+			const touch = e.changedTouches[0]
+			if (touch) {
+				targetX = touch.clientX - rect.left
+				targetY = touch.clientY - rect.top
+			}
+		}
+
 		const handleMouseLeave = () => {
 			targetX = currentX;
 			targetY = currentY;
@@ -72,8 +83,9 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 		const element = gridRef.current;
 		element?.addEventListener("mousemove", handleMouseMove);
 		element?.addEventListener("mouseleave", handleMouseLeave);
-		element?.addEventListener("touchmove", handleTouchMove);
-		element?.addEventListener("touchstart", handleTouchStart);
+		element?.addEventListener("touchmove", handleTouchMove, { passive: true });
+		element?.addEventListener("touchstart", handleTouchStart, { passive: true });
+		element?.addEventListener("touchend", handleTouchEnd, { passive: true });
 
 		animate();
 
@@ -83,6 +95,7 @@ export default function GridBackground({ children, className = "" }: GridBgProps
 			element?.removeEventListener("mouseleave", handleMouseLeave);
 			element?.removeEventListener("touchmove", handleTouchMove);
 			element?.removeEventListener("touchstart", handleTouchStart);
+			element?.removeEventListener("touchend", handleTouchEnd);
 		};
 	}, []);
 
