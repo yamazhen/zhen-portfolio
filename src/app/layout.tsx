@@ -31,7 +31,7 @@ export default function RootLayout({
 					<CustomCursor />
 					<main>
 						<Nav />
-						<GridBackground className="max-lg:px-6 lg:px-[150px]">
+						<GridBackground className="max-md:px-6 max-lg:px-30 lg:px-[150px]">
 							{children}
 						</GridBackground>
 					</main>

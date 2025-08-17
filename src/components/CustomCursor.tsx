@@ -19,7 +19,7 @@ export default function CustomCursor() {
 
 	return (
 		<div
-			className="fixed w-6 h-6 bg-transparent border border-accent rounded-full pointer-events-none z-50 hidden md:block"
+			className="fixed w-6 h-6 bg-transparent border border-accent rounded-full pointer-events-none z-50 hidden lg:block"
 			style={{
 				left: position.x,
 				top: position.y,

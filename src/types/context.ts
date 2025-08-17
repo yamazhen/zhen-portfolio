@@ -7,4 +7,6 @@ export type AppState = {
 	setPage: (page: Page) => void;
 	careerMode: CareerMode;
 	setCareerMode: (careerMode: CareerMode) => void;
+	hamburgerExpand: boolean;
+	setHamburgerExpand: (expand: boolean) => void;
 }
