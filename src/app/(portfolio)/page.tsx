@@ -1,0 +1,103 @@
+"use client";
+
+import CareerBox from "@/components/CareerBox";
+import HomeProjectBox from "@/components/HomeProjectBox";
+import PageSection from "@/components/PageSection";
+import Typewriter from "@/components/Typewriter";
+import { Github, Linkedin, LucideMail } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Home() {
+	const age = new Date().getFullYear() - 2002;
+
+	return (
+		<>
+			<PageSection first className="gap-8 md:flex-row md:items-center">
+				<Image
+					src="/img/me.JPG"
+					alt="picture of me"
+					width={1000}
+					height={1000}
+					className="rounded-xl max-md:w-48 md:w-64 md:h-64 md:order-1"
+				/>
+				<div className="flex flex-col justify-center md:gap-8 gap-2">
+					<small className="">
+						<span className="text-accent">~/portfolio</span> $ cat
+						intro.txt
+					</small>
+					<Typewriter
+						text="hi, bowen here. 👋"
+						className="text-accent md:text-4xl text-xl text-nowrap"
+					/>
+					<p className="text-muted text-xs md:text-base">
+						{age}yo software engineer from Malaysia
+					</p>
+					<p className="max-md:text-sm">
+						Fullstack by trade, I solve problems with code and
+						deploy solutions with spite.
+					</p>
+					<div className="flex items-center gap-4 text-sm max-md:text-xs">
+						<a
+							href="/file/resume.pdf"
+							download
+							className="text-background bg-accent hover:bg-accent-dim max-md:px-3 max-md:py-1.5 transition-all duration-500 rounded-sm px-6 py-3 hover:shadow-accent-dim/50 hover:shadow-[0_0_30px] cursor-pointer"
+						>
+							Resume
+						</a>
+						<Link
+							href={"/projects"}
+							className="border border-border bg-background px-6 py-3 rounded-sm max-md:px-3 max-md:py-1.5 hover:border-accent glass-hover duration-500 transition-colors cursor-pointer"
+						>
+							Projects
+						</Link>
+						<a
+							href="https://github.com/yamazhen"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Github
+								strokeWidth={1}
+								className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4"
+							/>
+						</a>
+						<a
+							href="https://linkedin.com/in/yamazhen"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Linkedin
+								strokeWidth={1}
+								className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4"
+							/>
+						</a>
+						<a href="mailto:bowxyt@gmail.com">
+							<LucideMail
+								strokeWidth={1}
+								className="text-muted hover:text-accent transition-colors duration-500 cursor-pointer max-md:h-4 max-md:w-4"
+							/>
+						</a>
+					</div>
+				</div>
+			</PageSection>
+			<PageSection className="max-lg:mb-20">
+				<h2 className="font-bold text-2xl max-lg:mt-20 mb-10 section-title max-lg:text-base">
+					featured projects
+				</h2>
+				<div className="grid grid-cols-2 max-lg:grid-cols-1 gap-10">
+					<HomeProjectBox />
+				</div>
+			</PageSection>
+			<PageSection className="mb-20">
+				<small className="mb-8">
+					<span className="text-accent">~/career</span> $ ls
+					experience/ education/
+				</small>
+				<h2 className="font-bold text-2xl mb-16 section-title">
+					experience &amp; education
+				</h2>
+				<CareerBox />
+			</PageSection>
+		</>
+	);
+}

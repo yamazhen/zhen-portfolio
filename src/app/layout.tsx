@@ -1,17 +1,11 @@
-import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google"
-import "./globals.css";
-import { AppProvider } from "@/context/AppContext";
-import Nav from "@/components/Nav";
-import GridBackground from "@/components/GridBackground";
-import CustomCursor from "@/components/CustomCursor";
-import Footer from "@/components/Footer";
+import { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
 
 const jetBrains = JetBrains_Mono({
 	variable: "--font-jetbrains",
 	subsets: ["latin"],
 	weight: "400",
-})
+});
 
 export const metadata: Metadata = {
 	title: "Zhen",
@@ -20,24 +14,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+}: {
 	children: React.ReactNode;
-}>) {
+}) {
 	return (
 		<html lang="en">
-			<body
-				className={`${jetBrains.variable} antialiased`}
-			>
-				<AppProvider>
-					<CustomCursor />
-					<main>
-						<Nav />
-						<GridBackground className="max-md:px-6 max-lg:px-30 lg:px-[150px]">
-							{children}
-							<Footer />
-						</GridBackground>
-					</main>
-				</AppProvider>
+			<body className={`${jetBrains.variable} antialiased`}>
+				{children}
 			</body>
 		</html>
 	);

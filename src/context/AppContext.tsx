@@ -8,11 +8,13 @@ const AppContext = createContext<AppState | undefined>(undefined)
 export function AppProvider({ children }: { children: ReactNode }) {
 	const [theme, setTheme] = useState<Theme>("dark")
 	const [page, setPage] = useState<Page>("home")
-	const [careerMode, setCareerMode] = useState<CareerMode>("exp")
+	const [careerMode, setCareerMode] = useState<CareerMode>("EXPERIENCE")
 	const [hamburgerExpand, setHamburgerExpand] = useState<boolean>(false)
 
 	useEffect(() => {
-		document.documentElement.className = theme;
+		if (typeof document !== 'undefined') {
+			document.documentElement.className = theme;
+		}
 	}, [theme])
 
 	return (

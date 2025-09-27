@@ -1,0 +1,46 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+model Project {
+    id          Int     @id @default(autoincrement())
+    name        String
+    description String?
+    tech_stack  String // its a JSON string array
+    source      String // same as above
+
+    // github data
+    github_id         Int       @unique
+    readme_content    String?
+    github_created_at DateTime?
+
+    visible       Boolean @default(false)
+    featured      Boolean @default(false)
+    display_order Int     @default(0)
+
+    //metadata
+    created_at DateTime  @default(now())
+    synced_at  DateTime?
+}
+
+model Career {
+    id            Int        @id @default(autoincrement())
+    type          CareerMode
+    title         String
+    institution   String
+    start_date    DateTime
+    end_date      DateTime?
+    descriptions  String? // json string array
+    extra         String? // json string array
+    display_order Int        @default(0)
+}
+
+enum CareerMode {
+    EXPERIENCE
+    EDUCATION
+}
