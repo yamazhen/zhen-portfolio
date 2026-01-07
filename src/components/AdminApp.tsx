@@ -9,6 +9,7 @@ const dataProvider = jsonServerProvider("/admin/api");
 
 const AdminApp = () => {
 	return (
+		// TODO: implement authentication for admin page
 		<Admin dataProvider={dataProvider} theme={bwDarkTheme}>
 			{/* TODO: create a custom projectcreator and projecteditor */}
 			{/* NOTE: i need to create a service that syncs all my repo from github */}
